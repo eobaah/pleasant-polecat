@@ -2,8 +2,8 @@ const expect = require("chai").expect;
 const db = require("../database/db");
 
 describe("Testing each SQL query", function() {
-  it("getAll should return all books", function() {
-    var allBooks  = db.getAll();
+  it("getAll should return one book", function() {
+    var allBooks  = db.getOne();
 
     expect(allBooks).to.equal();
   });

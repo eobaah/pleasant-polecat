@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import polecat from '../public/pleasant_polecat.png'
-import './App.css'
 import Library from './Library'
 
-class App extends Component {
+class Home extends Component {
   constructor(props) {
     super(props)
 
@@ -45,18 +43,7 @@ class App extends Component {
 
     return (
 
-        <div className="App">
-
-          <div className="App-header">
-            <img src={polecat} className="App-logo" alt="logo" />
-            <h2>Pleasant-Polecat-Bookstore</h2>
-            <input
-                  type="text"
-                  value={searchString}
-                  onChange={this.handleSearch.bind(this)}
-                  placeholder="Search"
-                />
-          </div>
+        <div>
 
           <div className="row">
             <div>
@@ -70,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;

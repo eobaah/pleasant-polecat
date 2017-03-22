@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class Library extends Component {
 
-
   render() {
 
     const books = this.props.books
@@ -12,7 +11,7 @@ class Library extends Component {
     )
 
     return (
-      <div>
+      <div className="row__inner">
           {bookCovers}
       </div>
     )
