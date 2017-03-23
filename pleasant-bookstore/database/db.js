@@ -10,7 +10,7 @@ const db = pgp( connectionString )
 const Books = {
   getAll: () => db.any("SELECT * FROM booklist ORDER BY title ASC", []),
 
-  getOne: (book_id) => db.one("SELECT * FROM booklist WHERE book_id =$1", [book_id]),
+  getOne: (book_id) => db.one("SELECT * FROM booklist WHERE book_id = $1", [book_id]),
 
   search: (input) => {
     input = `%${input}%`
@@ -19,7 +19,20 @@ const Books = {
 
   deleteOne: (book_id) => db.none("DELETE FROM booklist WHERE book_id = $1", [book_id]),
 
-  updateBook: (book_id, title, author, genre) => db.none("UPDATE booklist SET title = $2, author = $3, genre = $4 WHERE book_id = $1", [book_id, title, author, genre]),
+  updateBook: (book_id, field, input) => {
+    if (field === 'title') {
+      return db.none("Update booklist SET title = $2 WHERE book_id = $1", [book_id, input])
+    }
+    else if (field === 'author') {
+      return db.none("Update booklist SET author = $2 WHERE book_id = $1", [book_id, input])
+    }
+    else if (field === 'genre') {
+      return db.none("Update booklist SET genre = $2 WHERE book_id = $1", [book_id, input])
+    }
+    else if (field === 'description') {
+      return db.none("Update booklist SET description = $2 WHERE book_id = $1", [book_id, input])
+    }
+  },
 
   createBook: (title, author, genre) => db.none("INSERT INTO booklist (title, author, genre) VALUES ($1, $2, $3)", [title, author, genre])
 }

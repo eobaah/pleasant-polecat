@@ -29,10 +29,20 @@ app.get('/search/:input', (request, response) => {
       .catch( err => console.log('err', err) )
 })
 
-app.delete('/:id', (request, response) => {
+app.delete('/delete/:id', (request, response) => {
   const { id } = request.params
   Books.deleteOne( id )
     .then( () => response.json( {1: 'success'}) )
+    // .then( () => response.redirect('localhost:3000') ) 
+      .catch( err => console.log('err', err) )
+})
+
+app.put('/:id/:field', function(request, response) {
+  const id = request.params.id
+  const field = request.params.field
+  const { input } = request.body
+  Books.updateBook(id, field, input)
+    .then( () => response.json({1: 'updated'}) )
       .catch( err => console.log('err', err) )
 })
 

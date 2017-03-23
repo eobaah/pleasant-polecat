@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import polecat from '../public/pleasant_polecat.png'
+import './App.css'
 import Library from './Library'
 
 class Home extends Component {
@@ -33,7 +35,6 @@ class Home extends Component {
 
   handleSearch(event) {
     this.setState( { searchString: event.target.value} )
-    console.log('books', this.state.books)
     this.getSearchedBooks(event.target.value)
   }
 
@@ -43,15 +44,26 @@ class Home extends Component {
 
     return (
 
-        <div>
+      <div className="App">
 
-          <div className="row">
-            <div>
-              <Library books={books} />
-            </div>
-          </div>
-
+        <div className="App-header">
+          <img src={polecat} className="App-logo" alt="logo" />
+          <h2>Pleasant-Polecat-Bookstore</h2>
+          <input
+                type="text"
+                value={searchString}
+                onChange={this.handleSearch.bind(this)}
+                placeholder="Search"
+              />
         </div>
+
+        <div className="row">
+          <div>
+            <Library books={books} />
+          </div>
+        </div>
+
+      </div>
 
     );
   }
