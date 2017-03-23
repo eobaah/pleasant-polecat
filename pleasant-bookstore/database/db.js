@@ -34,7 +34,7 @@ const Books = {
     }
   },
 
-  createBook: (title, author, genre) => db.none("INSERT INTO booklist (title, author, genre) VALUES ($1, $2, $3)", [title, author, genre])
+  createBook: ({title, author, description, genre, image_url}) => db.any("INSERT INTO booklist (title, author, description, genre, image_url) VALUES ($1, $2, $3, $4, $5)", [title, author, description, genre, image_url])
 }
 
 module.exports = Books

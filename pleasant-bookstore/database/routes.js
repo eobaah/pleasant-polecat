@@ -33,7 +33,7 @@ app.delete('/delete/:id', (request, response) => {
   const { id } = request.params
   Books.deleteOne( id )
     .then( () => response.json( {1: 'success'}) )
-    // .then( () => response.redirect('localhost:3000') ) 
+    // .then( () => response.redirect('localhost:3000') )
       .catch( err => console.log('err', err) )
 })
 
@@ -43,6 +43,14 @@ app.put('/:id/:field', function(request, response) {
   const { input } = request.body
   Books.updateBook(id, field, input)
     .then( () => response.json({1: 'updated'}) )
+      .catch( err => console.log('err', err) )
+})
+
+app.post('/new', (request, response) => {
+  const { book } = request.body
+  console.log('book', book.author);
+  Books.createBook(book)
+    .then( () => response.json({1: 'posted'}) )
       .catch( err => console.log('err', err) )
 })
 

@@ -33,6 +33,20 @@ html {
 	width: 100%;
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: space-between;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    height: 65vh;
+    justify-content: space-between;
+}
+
 .row {
 	overflow: auto;
 }

@@ -48,7 +48,6 @@ class BookDetails extends Component {
     fetch(`http://localhost:5000/delete/${book.book_id}`, {
       method: 'delete',
     })
-      // .then( () => this.getAllItems() )
   }
 
   render() {

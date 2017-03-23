@@ -17,6 +17,10 @@ class Home extends Component {
     this.getAllBooks()
   }
 
+  componentDidUpdate() {
+    this.getAllBooks()
+  }
+
   getAllBooks() {
     fetch('http://localhost:5000/all', {
       method: 'get',
