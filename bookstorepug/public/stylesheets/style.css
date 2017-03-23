@@ -1,0 +1,288 @@
+
+body,
+html {
+	padding: 0 10px;
+	margin: 0;
+	background: #0e0f11;
+	color: #ecf0f1;
+	font-family: 'Open Sans', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+}
+
+a:link,
+a:hover,
+a:active,
+a:visited {
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+  color: #95a5a6;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #7f8c8d;
+  text-decoration: underline;
+}
+
+.mainContainer{
+  align-self:center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mainContainer h1 {
+	margin: 5% 0 0 0;
+  text-align: center;
+}
+
+form {
+	display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.inputBox  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5% 0;
+	width: 100%;
+}
+
+.createBookBtn {
+	background-color: grey;
+	border-radius: 5px;
+	margin: 0 0 0 2%;
+	padding: 1%;
+}
+.createBookBtn i {
+	color: #fff;
+}
+
+.bookWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.containerBooks {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.containerBooks .bookCover {
+  width: 300px;
+  height: 500px;
+}
+
+.containerBooks p {
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+	height: 5em;
+}
+
+.lineBreakMobile {
+  border-bottom: 3px solid #fff;
+  align-self: center;
+  margin: 0 0 5% 0;
+  width: 50%;
+}
+
+.details.fa.fa-angle-left {
+	color: #fff;
+	font-size: 3em;
+	margin: 5% 0 0 0;
+}
+
+.detailsContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.detailsImg {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.detailsImg img {
+	align-content: center;
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	margin: 0 0 5% 0;
+	width: 80%;
+}
+
+.detailsButtons {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.detailsButtons i.fa {
+	cursor: pointer;
+	font-size: 2em;
+  margin: 0 3%;
+}
+
+.editContainer {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.editForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.editContainer .inputAuthor {
+	font-size: 1em;
+	width: 100%;
+}
+
+.editContainer input {
+	font-size: 1em;
+	width: 100%;
+}
+
+.editContainer textarea {
+	font-size: .5em;
+	width: 100%;
+}
+
+.inputSubmit {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	margin: 5% 0;
+	width: 20%;
+}
+.inputSubmit button, .deleteForm button {
+	background-color: white;
+	border-radius: 5px;
+	font-size: 2em;
+	margin: 0 10% 0 0;
+	width: 50%;
+	height: auto;
+}
+
+.editContainer a {
+	margin: 0 2% 0 0;
+}
+.editContainer i.edit {
+	color: white;
+	font-size: 3em;
+}
+
+.createContainer {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.createForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.createContainer .inputAuthor {
+	font-size: 1em;
+	width: 100%;
+}
+
+.createContainer input {
+	font-size: 1em;
+	width: 100%;
+}
+
+.createContainer textarea {
+	font-size: .5em;
+	width: 100%;
+}
+
+.inputSubmit {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 5% 0;
+	width: 100%;
+}
+.inputSubmit button {
+	background-color: white;
+	font-size: 2em;
+	margin: 0 10% 0 0;
+	border-radius: 10px;
+	width: 20%;
+	height: auto;
+}
+
+.createContainer .create.fa.fa-window-close {
+	color: white;
+	font-size: 3em;
+}
+
+
+/* =================================
+  Tablet Screen Media Query
+==================================== */
+
+@media screen and (min-width: 768px) {
+  body,
+  html {
+  	background: orange;
+  }
+
+	.containerBooks {
+	  display: flex;
+	  flex-direction: column;
+	  width: 100%;
+	}
+
+	.bookWrapper {
+	  display: flex;
+	  flex-direction: column;
+	  width: 100%;
+	}
+}
+
+/* =================================
+  Large Screen Media Query
+==================================== */
+
+@media screen and (min-width: 1024px) {
+  body,
+  html {
+  	background: blue;
+  }
+
+	.containerBooks {
+	  display: flex;
+	  flex-direction: row;
+	  width: 100%;
+	}
+
+	.bookWrapper {
+	  display: flex;
+	  flex-direction: column;
+		height: auto;
+	  width: 400px;
+	}
+}

@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .detailsContainer
+    a(href='/')  
+      i.details.fa.fa-angle-left(aria-hidden="true")
+    .detailsAuthor
+      p Author: #{books.author}
+    .detailsTitle
+      h1 Title: #{books.title}
+    .detailsImg
+      img(src=books.image_url)
+    .lineBreakMobile
+    .detailsGenre
+      p Genre: #{books.genre}
+    .detailsPreview
+      p Preview: 
+      p=books.preview
+    .detailsButtons
+      a(href=`/editbook/${books.id}`)
+        i.details.fa.fa-pencil-square-o(aria-hidden="true")
+      a(href='/')
+        i.details.fa.fa-window-close(aria-hidden="true")
+      
+    
+    
