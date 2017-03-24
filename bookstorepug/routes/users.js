@@ -11,6 +11,10 @@ router.get('/signup', function(request, response, next) {
   response.render('signup');
 });
 
+router.get('/login', function(request, response, next) {
+  response.render('login');
+});
+
 
 
 module.exports = router;
