@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import polecat from '../public/pleasant_polecat.png'
 import './App.css'
 import Library from './Library'
+import { Link } from 'react-router'
 
 class Home extends Component {
   constructor(props) {
@@ -17,8 +18,11 @@ class Home extends Component {
     this.getAllBooks()
   }
 
+//This gives a warning.
   componentDidUpdate() {
-    this.getAllBooks()
+    if (this.state.searchString.length === 0) {
+        this.getAllBooks()
+    }
   }
 
   getAllBooks() {
@@ -59,6 +63,7 @@ class Home extends Component {
                 onChange={this.handleSearch.bind(this)}
                 placeholder="Search"
               />
+          <Link to='/new'><button>Update Library</button></Link>
         </div>
 
         <div className="row">

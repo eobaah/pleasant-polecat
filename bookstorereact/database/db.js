@@ -2,6 +2,13 @@ const fs = require('fs')
 if ( fs.existsSync('.env') ) {
   require('dotenv').config()
 }
+//for user auth
+const {
+  createSalt,
+  hashPassword,
+  comparePassword
+} = require('../auth/hashpassword')
+
 const pgp = require('pg-promise')()
 const connectionString = `pg://${process.env.USER}@localhost:5432/pleasantpolecat`
 const db = pgp( connectionString )
@@ -34,6 +41,12 @@ const Books = {
   },
 
   createBook: ({title, author, description, genre, image_url}) => db.any("INSERT INTO booklist (title, author, description, genre, image_url) VALUES ($1, $2, $3, $4, $5)", [title, author, description, genre, image_url])
+}
+
+const User = {
+  find: (email, password) => {
+    return db.oneOrNone('SELECT * FROM users WHERE email = $1 AND password = $2')
+  }
 }
 
 module.exports = Books

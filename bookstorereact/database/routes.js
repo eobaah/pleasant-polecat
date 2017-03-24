@@ -5,6 +5,9 @@ const pgp = require('pg-promise')
 const bodyParser = require('body-parser')
 const Books = require('./db.js')
 
+//needed?
+const passport = require('../auth/passport')
+
 app.use( bodyParser.json() )
 app.use( bodyParser.urlencoded({ extended: false}) )
 app.use( cors() )
@@ -55,5 +58,5 @@ app.post('/new', (request, response) => {
 })
 
 app.listen(5000, function() {
-  console.log('Database API for Huge Manatee is listening on port 5000!')
+  console.log('Database API for pleasantpolecat is listening on port 5000!')
 })

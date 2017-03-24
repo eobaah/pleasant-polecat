@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router'
+import { Link } from 'react-router'
 
 class NewBook extends Component {
   constructor(props) {
@@ -61,6 +61,7 @@ class NewBook extends Component {
           <input type="submit" value="Submit" />
         </form>
 
+        <Link to='/'><button>Home</button></Link>
         {/* <Link onClick={this.newBook} >
           <button>Button</button>
         </Link> */}

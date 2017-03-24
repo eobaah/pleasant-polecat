@@ -4,6 +4,8 @@ import Home from './Home'
 import BookDetails from './BookDetails'
 import NewBook from './NewBook'
 import FourOhFour from './FourOhFour'
+import Login from './Login'
+import Signup from './Signup'
 
 class App extends Component {
 
@@ -13,6 +15,8 @@ class App extends Component {
           <Route path='/' component={Home} />
           <Route path='/details/:book_id' component={BookDetails} />
           <Route path='/new' component={NewBook} />
+          <Route path='/login' component={Login} />
+          <Route path='/signup' component={Signup} />
           <Route path='*' component={FourOhFour} />
         </Router>
     )

@@ -13,4 +13,12 @@ CREATE TABLE booklist (
   image_url VARCHAR(1000)
 );
 
-COPY booklist FROM '/Users/ryankent/Desktop/LG/pleasant-polecat/pleasant-bookstore/database/booksdata.csv' DELIMITER ',' CSV HEADER
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+  user_id SERIAL PRIMARY KEY,
+  email VARCHAR(150),
+  password VARCHAR(300),
+  role VARCHAR(50)
+);
+
+COPY booklist FROM '/Users/ryankent/Desktop/LG/pleasant-polecat/bookstorereact/database/booksdata.csv' DELIMITER ',' CSV HEADER
