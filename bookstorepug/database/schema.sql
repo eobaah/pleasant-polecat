@@ -19,4 +19,4 @@ CREATE TABLE IF NOT EXISTS users(
 
 
 
-COPY bookstore from '/Users/baahmac/Documents/LearnersGuild/LgProjects/pleasant-polecat/database/booksdata.csv' DELIMITER ',' CSV HEADER;
+COPY bookstore from '/Users/baahmac/Documents/LearnersGuild/LgProjects/pleasant-polecat/bookstorepug/database/booksdata.csv' DELIMITER ',' CSV HEADER;

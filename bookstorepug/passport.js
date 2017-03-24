@@ -27,3 +27,13 @@ const strategy = new LocalStrategy( paramsOptions, ( email, password, done ) => 
 })
 
 passport.use( strategy )
+
+passport.serializeUser( ( user, done ) => done( null, user.id ) )
+
+passport.deserializeUser( ( id, done ) => {
+  findUserById( id )
+    .then( user => done( null, user ))
+    .catch( error => done( error, null ))
+})
+
+module.export = passport

@@ -239,7 +239,7 @@ form {
 	font-size: 3em;
 }
 
-.user {
+.user.signin, .user.login {
 	display: flex;
 	flex-direction: column;
 }

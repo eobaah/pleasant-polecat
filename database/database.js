@@ -1,8 +1,3 @@
-const {
-  createSalt,
-  hashPassword,
-  comparePassword
-} = require('../auth/hashpassword')
 const promise = require( 'bluebird' )
 const options = { promiseLib: promise }
 const pgp = require( 'pg-promise' )( options )
@@ -52,25 +47,4 @@ const Books = {
   }
 }
 
-const User = {
-
-  find: ( email, password ) => {
-    return db.oneOrNone( 'SELECT * FROM users WHERE email=$1', [email])
-      .then( user => comparePassword( password, user))
-  },
-  findById: id => db.one( 'SELECT * FROM users WHERE id=$1', [id] ),
-  createOne: ( email, password ) => {
-    return createSalt( password )
-      .then( hashPassword )
-      .then ( hash => {
-        return db.one(
-          'INSERT INTO users(email, password ) VALUES ($1, $2) RETURNING *', [ email, hash ]
-        )
-      })
-  }
-}
-
-module.exports = {
-  Books,
-  User
-}
+module.exports = Books
