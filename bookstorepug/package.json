@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./bin/www",
-    "db:init": "createdb pleasant-polecat && psql pleasant-polecat < ./database/schema.sql",
+    "db:init": "createdb pleasantpolecatdb && psql pleasantpolecatdb < ./database/schema.sql",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

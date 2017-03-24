@@ -239,6 +239,10 @@ form {
 	font-size: 3em;
 }
 
+.user {
+	display: flex;
+	flex-direction: column;
+}
 
 /* =================================
   Tablet Screen Media Query
