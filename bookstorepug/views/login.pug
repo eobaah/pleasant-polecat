@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Log into the bookstore
+  form(method='post')
+    label Email: 
+      input(type='text' name='email')
+    label Password: 
+      input(type='text' name='password')
+    button(type='submit' value='Submit')
