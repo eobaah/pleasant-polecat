@@ -2,9 +2,8 @@ const fs = require('fs')
 if ( fs.existsSync('.env') ) {
   require('dotenv').config()
 }
-
-const connectionString = process.env.DATABASE_URL
 const pgp = require('pg-promise')()
+const connectionString = `pg://${process.env.USER}@localhost:5432/pleasantpolecat`
 const db = pgp( connectionString )
 
 const Books = {
