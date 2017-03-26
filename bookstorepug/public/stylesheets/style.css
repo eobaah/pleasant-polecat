@@ -1,15 +1,26 @@
+.icon::before {
+    display: inline-block;
+		color: #fff;
+    margin-right: .5em;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
 
 body,
 html {
-	padding: 0 10px;
-	margin: 0;
+	align-items: center;
 	background: #0e0f11;
 	color: #ecf0f1;
-	font-family: 'Open Sans', sans-serif;
-	min-height: 100vh;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	min-height: 100vh;
+	padding: 0;
 	width: 100%;
 }
 
@@ -28,6 +39,130 @@ a:hover {
   text-decoration: underline;
 }
 
+.splashWrapper {
+	background: url("../images/bookshelf.jpg") no-repeat center center fixed;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+}
+
+.userContainer{
+	align-items: center;
+  background-color: rgba(0, 0, 0, .5);
+	border-radius: 25px;
+	display: flex;
+	flex-direction: column;
+	height: 40%;
+	width: 70%;
+	margin: 5% auto auto auto;
+}
+
+.userContainer h1{
+	margin: 5% 0;
+	padding: 2%;
+  text-align: center;
+}
+
+.userSignupLogin {
+	display: flex;
+	flex-direction: row;
+}
+.userSignupLogin a {
+	cursor: pointer;
+	margin: 5%;
+}
+
+.userSignupLogin .button{
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	font-size: 1.5em;
+	height: 50px;
+	width: 150px;
+}
+
+.loginWrapper {
+	background: url("../images/loginimg.jpg") no-repeat center center fixed;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+}
+
+.loginContainer{
+	align-items: center;
+  background-color: rgba(100, 100, 100, .4);
+	border-radius: 25px;
+	display: flex;
+	flex-direction: column;
+	height: 40%;
+	width: 70%;
+	margin: 5% auto auto auto;
+}
+
+.loginContainer form {
+	align-items:flex-start;
+	display: flex;
+	flex-direction: column;
+	margin: 5% auto auto auto;
+}
+
+.loginContainer input {
+	margin: 5% 0;
+}
+.loginContainer button {
+	align-items: center;
+  background-color: #FFF;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	height: 30%;
+	width: 100%;
+	margin: 20% 0 0 0;
+}
+
+
+.signupWrapper {
+	background: url("../images/signupimg.jpg") no-repeat center center fixed;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+}
+
+.signupContainer{
+	align-items: center;
+  background-color: rgba(0, 0, 0, .5);
+	border-radius: 25px;
+	display: flex;
+	flex-direction: column;
+	height: 40%;
+	width: 70%;
+	margin: 5% auto auto auto;
+}
+
+.signupContainer form {
+	align-items:flex-start;
+	display: flex;
+	flex-direction: column;
+	margin: 5% auto auto auto;
+}
+
+.signupContainer input {
+	margin: 5% 0;
+}
+
+.signupContainer button {
+	align-items: center;
+  background-color: #FFF;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	height: 30%;
+	width: 100%;
+	margin: 20% 0 0 0;
+}
 .mainContainer{
   align-self:center;
   display: flex;
@@ -78,8 +213,8 @@ form {
 }
 
 .containerBooks .bookCover {
+	height: 500px;
   width: 300px;
-  height: 500px;
 }
 
 .containerBooks p {
@@ -94,6 +229,11 @@ form {
   align-self: center;
   margin: 0 0 5% 0;
   width: 50%;
+}
+
+.detailsWrapper {
+	display: flex;
+	flex-direction: column;
 }
 
 .details.fa.fa-angle-left {
@@ -239,16 +379,27 @@ form {
 	font-size: 3em;
 }
 
+form {
+	display: flex;
+	flex-direction: row;
+}
+
+.createContainer .create.fa.fa-window-close {
+	color: white;
+	font-size: 3em;
+}
+
+.user.signin, .user.login {
+	display: flex;
+	flex-direction: column;
+}
 
 /* =================================
   Tablet Screen Media Query
 ==================================== */
 
 @media screen and (min-width: 768px) {
-  body,
-  html {
-  	background: orange;
-  }
+
 
 	.containerBooks {
 	  display: flex;
@@ -268,10 +419,6 @@ form {
 ==================================== */
 
 @media screen and (min-width: 1024px) {
-  body,
-  html {
-  	background: blue;
-  }
 
 	.containerBooks {
 	  display: flex;
@@ -283,6 +430,12 @@ form {
 	  display: flex;
 	  flex-direction: column;
 		height: auto;
+		margin: 0 1%;
 	  width: 400px;
 	}
+
+	.detailsContainer {
+		width: 30%;
+	}
+
 }

@@ -7,6 +7,10 @@ const moment = require( 'moment' )
 
 /* GET home page. */
 router.get('/', (request, response ) => {
+  response.render('booksplash')
+})
+
+router.get('/library', (request, response ) => {
   Books.getAllBooks()
     .then( books => {
       response.render('index', {
@@ -15,6 +19,7 @@ router.get('/', (request, response ) => {
   })
 })
 
+
 router.get('/createbook', (request, response ) => {
   response.render('createbook')
 })
@@ -22,7 +27,7 @@ router.get('/createbook', (request, response ) => {
 router.post('/createbook/new', (request, response ) => {
   const book = request.body
   Books.createBook(book)
-    .then( () => response.redirect('/'))
+    .then( () => response.redirect('/library'))
 })
 
 router.get('/details/:id', (request, response ) => {
@@ -52,7 +57,7 @@ router.post('/editbook/update/:id', (request, response ) => {
   let book = request.body
   Books.editBook(id, book)
     .then( books => {
-      response.redirect('/')
+      response.redirect('/library')
     })
     .catch(error => console.error(error))
 })
@@ -60,7 +65,7 @@ router.post('/editbook/update/:id', (request, response ) => {
 router.post( '/delete/:id', ( request, response ) => {
   const id = request.params.id
   Books.deleteBook( id )
-    .then( () => response.redirect( '/' ) )
+    .then( () => response.redirect('/library') )
 })
 
 router.post('/results', ( request, response ) => {

@@ -9,6 +9,7 @@ const session = require('express-session');
 
 const routes = require('./routes/index');
 const app = express();
+
 const users = require('./routes/users');
 const index = require('./routes/index');
 
@@ -29,14 +30,14 @@ app.use(session({
   secret: 'beyonce',
   cookie: {},
   resave: true,
-  saveUninitialized: true 
+  saveUninitialized: true
  }))
+
 app.use(passport.initialize())
 app.use(passport.session())
 
 app.use('/', index);
 app.use('/users', users);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

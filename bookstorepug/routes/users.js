@@ -26,7 +26,7 @@ router.post( '/signup', (request, response, next) => {
         if(error) {
           next(error)
         }
-        response.redirect('/')
+        response.redirect('/library')
       })
     })
     .catch( error => {
@@ -45,7 +45,7 @@ router.post( '/login', passport.authenticate( 'local', authOptions ))
 
 router.get( '/logout', ( request, response ) => {
   request.logout()
-  response.redirect( '/' )
+  response.redirect( '/library' )
 })
 
 module.exports = router;

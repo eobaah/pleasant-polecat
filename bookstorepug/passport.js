@@ -7,7 +7,7 @@ const paramsOptions = {
 }
 
 const findUser = (email, password) => {
-  return User.find( email, passowrd )
+  return User.find( email, password )
 }
 
 const findUserById = id => {

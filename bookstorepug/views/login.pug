@@ -1,10 +1,13 @@
 extends layout
 
 block content
-  h1 Log into the bookstore
-  form(method='post').user.login
-    label Email: 
-      input(type='text' name='email')
-    label Password: 
-      input(type='text' name='password')
-    button(type='submit' value='Submit')
+  .loginWrapper
+    .loginContainer
+      h1 Log into the bookstore
+      form(method='post').user.login
+        label Email: 
+          input(type='text' name='email')
+        label Password: 
+          input(type='text' name='password')
+        button(type='submit' value='Submit')
+          | Log in

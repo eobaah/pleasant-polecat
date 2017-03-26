@@ -8,9 +8,8 @@ block content
         input(type="text" name="queryString" placeholder="Search books here")
         input(type='submit')
       .createBookBtn
-        a(href='/createbook')
-          i.create.fa.fa-plus-square(aria-hidden="true")
-            | Add Book
+        a(href='/createbook').icon.create.fa.fa-plus-square
+          | Add Book
     .containerBooks
      for book in books
       .bookWrapper
